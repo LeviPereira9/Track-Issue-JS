@@ -21,7 +21,8 @@ function saveIssue(e) {
         severity: issueSeverity,
         assignedTo: issueAssignedTo,
         status: issueStatus,
-        createdAt: `${date} - ${time}`
+        createdAt: `${date} - ${time}`,
+        closedAt: null
     };
 
     //Se não tiver, criar um array e adicionar os issues.
@@ -45,10 +46,13 @@ function saveIssue(e) {
 // Mudar o status para fechado.
 function setStatusClosed(id) {
     const issues = JSON.parse(localStorage.getItem("issues"));
+    const date = new Date().toLocaleDateString();
+    const time = new Date().toLocaleTimeString();
 
     for (let c = 0; c < issues.length; c++){
         if(issues[c].id == id) {
             issues[c].status = "Closed";
+            issues[c].closedAt = `${date} - ${time}`;
         }
     }
 
@@ -85,6 +89,7 @@ function fetchIssues() {
         let assignedTo = issues[c].assignedTo;
         let status = issues[c].status;
         let createdAt = issues[c].createdAt;
+        let closedAt = issues[c].closedAt;
         let classStatus;
         
         if(status === "Open"){
@@ -96,7 +101,7 @@ function fetchIssues() {
         //Adicionando as issues.
         issuesList.innerHTML += `
             <div class="issue row mb-2">
-                <p class="h6 col-md-12 text-center"> Issue ID: ${id} <span class="statusDetail">- Criado em: ${createdAt}</span></p>
+                <p class="h6 col-md-12 text-center"> Issue ID: ${id} </p><span class="statusDetail text-center mb-2"> Aberto: ${createdAt} ${closedAt ? ` | Fechado: ${closedAt} `: ""}</span>
                 <hr>
                 <p class="col-md-1 me-3">
                     <span class="label label-info btn ${classStatus} mt-4 statusBtn">${status}</span>
