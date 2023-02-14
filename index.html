@@ -31,7 +31,7 @@
     <script src="main.js" defer></script>
     <title>Issue Track - JS</title>
   </head>
-  <body onload="fetchIssues()">
+  <body>
     <div class="container">
       <h1>
         JS Issue Tracker <span class="italic">by CodingTheSmartWay.com</span>
@@ -54,6 +54,21 @@
               <option value="Baixa">Baixa</option>
               <option value="Média">Média</option>
               <option value="Alta">Alta</option>
+            </select>
+          </div>
+          <div class="mb-3 col-md-5">
+            <label for="issueCategory" class="form-label">Categória:</label>
+            <select id="issueCategory" class="form-select">
+              <option value="" selected disabled>Categória do problema</option>
+              <option value="Funcionamento do sistema">
+                Problemas de sistema
+              </option>
+              <option value="Desempenho">Problemas de desempenho</option>
+              <option value="Instalação">Problemas de instalação</option>
+              <option value="Usuário">Problemas de usuário</option>
+              <option value="Integração">Problemas de integração</option>
+              <option value="Segurança">Problemas de segurança</option>
+              <option value="Recursos">Problemas de recursos</option>
             </select>
           </div>
           <div class="mb-4 col-md-12">

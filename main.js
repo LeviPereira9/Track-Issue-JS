@@ -8,6 +8,7 @@ function saveIssue(e) {
     let issueDesc = document.querySelector("#issueDescInput").value;
     let issueSeverity = document.querySelector("#issueSeverityInput").value;
     let issueAssignedTo = document.querySelector("#issueAssignedToInput").value;
+    let issueCategory = document.querySelector("#issueCategory").value;
     let issueStatus = "Open";
 
     const date = new Date().toLocaleDateString();
@@ -21,6 +22,7 @@ function saveIssue(e) {
         severity: issueSeverity,
         assignedTo: issueAssignedTo,
         status: issueStatus,
+        category: issueCategory,
         createdAt: `${date} - ${time}`,
         closedAt: null
     };
@@ -88,6 +90,7 @@ function fetchIssues() {
         let severity = issues[c].severity;
         let assignedTo = issues[c].assignedTo;
         let status = issues[c].status;
+        let category = issues[c].category;
         let createdAt = issues[c].createdAt;
         let closedAt = issues[c].closedAt;
         let classStatus;
@@ -101,13 +104,19 @@ function fetchIssues() {
         //Adicionando as issues.
         issuesList.innerHTML += `
             <div class="issue row mb-2">
-                <p class="h6 col-md-12 text-center"> Issue ID: ${id} </p><span class="statusDetail text-center mb-2"> Aberto: ${createdAt} ${closedAt ? ` | Fechado: ${closedAt} `: ""}</span>
+                <p class="h6 col-md-12 text-center"> Issue ID: ${id} </p>
+                <span 
+                    class="statusDetail text-center mb-2"
+                    > 
+                    Aberto: ${createdAt} ${closedAt ? ` | Fechado: ${closedAt} `: ""}
+                </span>
                 <hr>
                 <p class="col-md-1 me-3">
                     <span class="label label-info btn ${classStatus} mt-4 statusBtn">${status}</span>
                 </p>
                 <div class="statusInfo mt-2 col-md-10">
-                    <p class="h6 mb-4"> #${desc} </p>
+                    <p class="h5 mb-2"> #${category} </p>
+                    <p class="mb-4">${desc} </p>
                     <p>
                         <i class="bi bi-stopwatch"></i> <span class="me-3">${severity}</span>
                         <i class="bi bi-person-fill"></i> <span>${assignedTo}</span>
@@ -134,3 +143,5 @@ function fetchIssues() {
             `;
     }
 }
+
+fetchIssues();
