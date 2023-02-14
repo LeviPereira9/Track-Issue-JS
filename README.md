@@ -2,7 +2,7 @@
 
 Este é um aplicativo de rastreamento de problemas simples, a interface do usuário está dividida em duas seções.
 
-No topo, é visível um formulário de entrada. Ao usar os campos de entrada para Nome, Urgência e Descrição, o usuário pode inserir novos problemas. Os problemas são armazenados no Armazenamento Local do Navegador, sendo impressa na segunda seção, como uma lista de problemas existentes.
+No topo, é visível um formulário de entrada. Ao usar os campos de entrada para Nome, Urgência, Categória do problema e Descrição do problema, o usuário pode inserir novos problemas. Os problemas são armazenados no Armazenamento Local do Navegador, sendo impressa na segunda seção, como uma lista de problemas existentes.
 
 Cada problema é impresso contendo uma ID única, data e horário de criação e os detalhes do nome, gravidade e descrição.
 
