@@ -1,0 +1,51 @@
+:root{
+    --bg-list: #ccc;
+    --bg-issue: #ececec;
+}
+
+h1{
+    margin: 20px 0;
+}
+
+#issuesList{
+    background-color: var(--bg-list);
+    border-radius: 15px;
+    padding: 15px 15px;
+}
+
+.issue{
+    background-color: var(--bg-issue);
+    border-radius: 5px;
+    padding: 10px 0;
+}
+
+.statusDetail{
+    font-weight: lighter;
+    font-size: .95em;
+}
+
+.statusBtn{
+    font-weight: bold;
+    color: white;
+}
+
+.call{
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid green;
+    margin-bottom: 15px;
+}
+
+.italic{
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 0.75em;
+}
+
+.footer{
+    margin: 50px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
