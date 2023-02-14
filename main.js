@@ -96,12 +96,12 @@ function fetchIssues() {
         //Adicionando as issues.
         issuesList.innerHTML += `
             <div class="issue row mb-2">
-                <p class="h6 col-12 text-center"> Issue ID: ${id} <span class="statusDetail">- Criado em: ${createdAt}</span></p>
+                <p class="h6 col-md-12 text-center"> Issue ID: ${id} <span class="statusDetail">- Criado em: ${createdAt}</span></p>
                 <hr>
-                <p class="col-1 me-3">
+                <p class="col-md-1 me-3">
                     <span class="label label-info btn ${classStatus} mt-4 statusBtn">${status}</span>
                 </p>
-                <div class="statusInfo mt-2 col-10">
+                <div class="statusInfo mt-2 col-md-10">
                     <p class="h6 mb-4"> #${desc} </p>
                     <p>
                         <i class="bi bi-stopwatch"></i> <span class="me-3">${severity}</span>
@@ -109,17 +109,17 @@ function fetchIssues() {
                     </p>
                 </div>
                 <hr>
-                <div class="text-center col-12">
+                <div class="text-center col-md-12">
                     <a
                         href="#"
-                        class="btn btn-warning col-1 me-3 statusBtn"
+                        class="btn btn-warning col-md-1 me-3 statusBtn"
                         onclick="setStatusClosed('${id}')"
                         >
                         Close
                     </a>
                     <a
                         href="#"
-                        class="btn btn-danger col-1 statusBtn"
+                        class="btn btn-danger col-md-1 statusBtn"
                         onclick="deleteIssue('${id}')"
                         >
                         Delete
